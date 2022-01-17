@@ -1,5 +1,7 @@
 package com.person.springboot.personspringboot.Controller;
 
+import java.util.List;
+
 import com.person.springboot.personspringboot.Model.Person;
 import com.person.springboot.personspringboot.Services.PersonService;
 
@@ -23,5 +25,10 @@ public class PersonController {
     {
         return Service.findById(id);
     }
-    
+    @RequestMapping(method = RequestMethod.GET,
+                    produces = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
+    public List<Person> findAll()
+    {
+    return Service.findAll();
+    }
 }
