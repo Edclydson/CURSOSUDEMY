@@ -9,6 +9,7 @@ import com.calcrest.calcrest.Operations.Raiz;
 import com.calcrest.calcrest.Operations.Subtracao;
 import com.calcrest.calcrest.Verification.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,12 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class calcController 
 {
-    Adicao mais = new Adicao();
-    Subtracao menos = new Subtracao();
-    Multiplicacao vezes = new Multiplicacao();
-    Divisao divisao = new Divisao();
-    Media mdia = new Media();
-    Raiz rquad = new Raiz();
+    @Autowired
+    private Adicao mais;
+    private Subtracao menos;
+    private Multiplicacao vezes;
+    private Divisao divisao;
+    private Media mdia;
+    private Raiz rquad;
 
     //SOMANDO
     @RequestMapping(value="/soma/{numero1}/{numero2}", method = RequestMethod.GET)
