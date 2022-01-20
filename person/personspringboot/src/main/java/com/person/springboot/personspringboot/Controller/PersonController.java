@@ -50,7 +50,7 @@ public class PersonController {
     {
         return Service.update(person);
     }
-    /// DELETANDO PERSON (POST) VIA BODY 
+    /// DELETANDO PERSON (DELETE) VIA BODY 
     @RequestMapping(value = "/{id}",
                     method = RequestMethod.DELETE)
     public void delete(@PathVariable("id") String id)
